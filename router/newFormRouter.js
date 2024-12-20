@@ -6,17 +6,19 @@ newFormRouter.get("/", (req, res) => {
 });
 newFormRouter.post("/", (req, res) => {
   const { text, user } = req.body;
-  messages.push({
-    id: messages.length + 1,
-    text: text,
-    user: user,
-    added: new Date().toLocaleTimeString("en-US", {
-      hour: "2-digit",
-      minute: "2-digit",
-      hour12: false,
-    }),
-  });
-  res.redirect("/");
+  if (text != "" && user != "") {
+    messages.push({
+      id: messages.length + 1,
+      text: text,
+      user: user,
+      added: new Date().toLocaleTimeString("en-US", {
+        hour: "2-digit",
+        minute: "2-digit",
+        hour12: false,
+      }),
+    });
+    res.redirect("/");
+  }
 });
 
 module.exports = newFormRouter;
