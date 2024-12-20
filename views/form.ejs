@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <%- include('partials/navbar') %>
+    <header>New Message Form</header>
+    <form method="POST" action="/new">
+      <div>
+        <label for="user"
+          >author: <input type="text" name="user" id="user"
+        /></label>
+      </div>
+      <div>
+        <label for="text"
+          >message: <input type="text" name="text" id="text"
+        /></label>
+        <button>Post</button>
+      </div>
+    </form>
+  </body>
+</html>

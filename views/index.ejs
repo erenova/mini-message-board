@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Index page</title>
+  </head>
+  <body>
+    <%- include('partials/navbar') %>
+    <div style="display: flex; flex-wrap: wrap; gap: 1rem">
+      <% locals.messages.forEach( message =>{%>
+      <div
+        style="
+          border: 1px black solid;
+          margin-top: 1rem;
+          display: flex;
+          flex-direction: column;
+          width: 150px;
+          height: 175px;
+          padding: 0.5rem;
+          overflow: auto;
+        "
+      >
+        <div style="color: red"><%= message.user %></div>
+        <div style="color: yellowgreen; background-color: azure">
+          <%= message.added %>
+        </div>
+        <a href="messages/<%= message.id %>">View as page</a>
+        <div style="margin-top: 6px">Text: <%= message.text %></div>
+      </div>
+
+      <% }) %>
+    </div>
+  </body>
+</html>
