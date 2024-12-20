@@ -21,4 +21,4 @@ newFormRouter.post("/", (req, res) => {
   }
 });
 
-module.exports = newFormRouter;
+module.exports = { newFormRouter };

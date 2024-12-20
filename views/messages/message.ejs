@@ -1,20 +1,30 @@
-<%- include('../partials/navbar') %>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <%- include('../partials/navbar') %>
 
-<div
-  style="
-    border: 1px black solid;
-    margin-top: 1rem;
-    display: flex;
-    flex-direction: column;
-    width: 150px;
-    height: 175px;
-    padding: 0.5rem;
-    overflow: auto;
-  "
->
-  <div style="color: red"><%= locals.user %></div>
-  <div style="color: yellowgreen; background-color: azure">
-    <%= locals.added %>
-  </div>
-  <div style="margin-top: 6px">Text: <%= locals.text %></div>
-</div>
+    <div
+      style="
+        border: 1px black solid;
+        margin-top: 1rem;
+        display: flex;
+        flex-direction: column;
+        width: 150px;
+        height: 175px;
+        padding: 0.5rem;
+        overflow: auto;
+      "
+    >
+      <div style="color: red"><%= locals.user %></div>
+      <div style="color: yellowgreen; background-color: azure">
+        <%= locals.added %>
+      </div>
+      <div style="margin-top: 6px">Text: <%= locals.text %></div>
+    </div>
+  </body>
+</html>
