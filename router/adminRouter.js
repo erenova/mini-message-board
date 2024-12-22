@@ -1,18 +1,8 @@
 const { Router } = require("express");
-const { messages } = require("./indexRouter");
 const adminRouter = Router();
+const adminController = require("../controllers/adminController");
+adminRouter.get("/", adminController.getAdmin);
 
-adminRouter.get("/", (req, res) => {
-  res.render("admin");
-});
-
-adminRouter.post("/", (req, res) => {
-  const { deletePost } = req.body;
-  const postIndex = parseInt(deletePost, 10) - 1;
-  if (postIndex >= 0 && postIndex < messages.length) {
-    messages.splice(postIndex, 1);
-  }
-  res.redirect("/admin");
-});
+adminRouter.post("/", adminController.deleteUser);
 
 module.exports = { adminRouter };

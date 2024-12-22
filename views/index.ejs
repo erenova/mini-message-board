@@ -8,12 +8,13 @@
   <body>
     <%- include('partials/navbar') %>
     <div style="display: flex; flex-wrap: wrap; gap: 1rem">
-      <% locals.messages.forEach( message =>{%>
+      <% if (allMessages) { %> <% locals.allMessages.map( user =>{%>
       <div
         style="
           border: 1px black solid;
           margin-top: 1rem;
           display: flex;
+          position: relative;
           flex-direction: column;
           width: 150px;
           height: 175px;
@@ -21,15 +22,18 @@
           overflow: auto;
         "
       >
-        <div style="color: red"><%= message.user %></div>
-        <div style="color: yellowgreen; background-color: azure">
-          <%= message.added %>
+        <div style="color: rgba(0, 0, 0, 0.35); position: absolute; right: 5px">
+          <%= user.id %>
         </div>
-        <a href="messages/<%= message.id %>">View as page</a>
-        <div style="margin-top: 6px">Text: <%= message.text %></div>
+        <div style="color: red"><%= user.author %></div>
+        <div style="color: yellowgreen; background-color: azure">
+          <%= user.message_time %>
+        </div>
+        <a href="/message?id=<%= user.id %>">View as page</a>
+        <div style="margin-top: 6px">Text: <%= user.message %></div>
       </div>
 
-      <% }) %>
+      <% }) %> <% } %>
     </div>
   </body>
 </html>

@@ -13,6 +13,7 @@
         border: 1px black solid;
         margin-top: 1rem;
         display: flex;
+        position: relative;
         flex-direction: column;
         width: 150px;
         height: 175px;
@@ -20,11 +21,14 @@
         overflow: auto;
       "
     >
-      <div style="color: red"><%= locals.user %></div>
-      <div style="color: yellowgreen; background-color: azure">
-        <%= locals.added %>
+      <div style="color: rgba(0, 0, 0, 0.35); position: absolute; right: 5px">
+        <%= locals.id %>
       </div>
-      <div style="margin-top: 6px">Text: <%= locals.text %></div>
+      <div style="color: red"><%= locals.author %></div>
+      <div style="color: yellowgreen; background-color: azure">
+        <%= locals.message_time %>
+      </div>
+      <div style="margin-top: 6px">Text: <%= locals.message %></div>
     </div>
   </body>
 </html>
