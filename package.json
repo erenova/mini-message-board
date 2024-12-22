@@ -2,9 +2,7 @@
   "name": "mini-message-board",
   "version": "1.0.0",
   "main": "app.js",
-  "scripts": {
-    "start": "node --watch app.js"
-  },
+  "scripts": {},
   "author": "",
   "license": "ISC",
   "description": "",
