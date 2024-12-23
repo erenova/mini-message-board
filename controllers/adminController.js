@@ -6,10 +6,11 @@ function getAdmin(req, res) {
 
 async function deleteUser(req, res) {
   const { deletePostId } = req.body;
-
-  await db.deleteUserByIdDB(deletePostId);
-  const allUsers = await db.getAllUsersDB();
-  console.log(allUsers);
+  if (deletePostId.includes === "admin") {
+    await db.deleteUserByIdDB(deletePostId);
+    const allUsers = await db.getAllUsersDB();
+    console.log(allUsers);
+  }
   res.redirect("/admin");
 }
 
